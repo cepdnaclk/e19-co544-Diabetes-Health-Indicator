@@ -7,7 +7,7 @@ ___
 The rising epidemic of diabetes and cardiovascular diseases is a significant issue, particularly among adults. A key factor contributing to poor health outcomes is the lack of awareness and understanding about diabetes. Increasing awareness and education about diabetes can help improve health conditions and prevent the progression of these diseases.
 
 <div style="display: flex; align-items: center;">
-  <div style="flex: 1;">
+  <div style="flex: 1; max-width: 50%;">
     <img src="./docs/images/1.jpeg" alt="Image description" style="max-width: 100%; height: auto;">
   </div>
   <div style="flex: 2; padding-left: 20px;">
@@ -36,10 +36,10 @@ The rising epidemic of diabetes and cardiovascular diseases is a significant iss
     + Check pairwise correlation of the features and eliminate the redundant features.
 
 * Implementing machine learning model and evaluating model performance
-    <b>+ Random Forest</b>
-    + Support Vector Machine (SVM)
-    + Logistic Regression
-    + Gradient Boosting
+    + **Random Forest**
+    + **Support Vector Machine (SVM)**
+    + **Logistic Regression**
+    + **Gradient Boosting**
 
 * Produce a weighted essemble model that gives best accuracy.
 
@@ -47,6 +47,15 @@ The rising epidemic of diabetes and cardiovascular diseases is a significant iss
 
 ## Tech Stack
 
+<div style="display: flex; flex-wrap: wrap; align-items: center;">
+  <img src="./docs/images/techstack1.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
+  <img src="./docs/images/techstack2.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
+  <img src="./docs/images/techstack3.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
+  <img src="./docs/images/techstack4.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
+  <img src="./docs/images/techstack5.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
+  <img src="./docs/images/techstack6.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
+  <img src="./docs/images/techstack7.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
+</div>
 ![Tech Stack](./docs/images/techstack1.png)
 ![Tech Stack](./docs/images/techstack2.png)
 ![Tech Stack](./docs/images/techstack3.png)
