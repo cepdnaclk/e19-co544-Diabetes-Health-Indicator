@@ -7,17 +7,17 @@ ___
 The rising epidemic of diabetes and cardiovascular diseases is a significant issue, particularly among adults. A key factor contributing to poor health outcomes is the lack of awareness and understanding about diabetes. Increasing awareness and education about diabetes can help improve health conditions and prevent the progression of these diseases.
 
 <div style="display: flex; align-items: center;">
-  <div style="flex: 1;">
+  <span style="flex: 1;">
     <img src="./docs/images/1.jpeg" alt="Image description" style="max-width: 100%; height: auto;">
-  </div>
-  <div style="flex: 2; padding-left: 20px;">
-    <p>
+  </span>
+  <span style="flex: 2; padding-left: 20px;">
+    
       The rising epidemic of diabetes and cardiovascular diseases is a significant issue, particularly among adults.    
       A key factor contributing to poor health outcomes is the lack of awareness and understanding about diabetes. 
       Increasing awareness and education about diabetes can help improve health conditions and prevent the progression 
       of these diseases.
-    </p>
-  </div>
+    
+  </span>
 </div>
 
 
