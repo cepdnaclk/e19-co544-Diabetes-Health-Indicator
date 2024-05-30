@@ -8,7 +8,7 @@ The rising epidemic of diabetes and cardiovascular diseases is a significant iss
 
 <div style="display: flex; align-items: center;">
   <div style="flex: 1; max-width: 50%;">
-    <img src="./docs/images/1.jpeg" alt="Image description" style="max-width: 100%; height: max-height: 100%;">
+    <img src="./docs/images/1.jpeg" alt="Image description" style="width: 300px;">
   </div>
   <div style="flex: 2; padding-left: 20px;">
     <p>
