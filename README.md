@@ -8,7 +8,7 @@ The rising epidemic of diabetes and cardiovascular diseases is a significant iss
 
 <div style="display: flex; align-items: center;">
   <div style="flex: 1; max-width: 50%;">
-    <img src="./docs/images/1.jpeg" alt="Image description" style="max-width: 100%; height: auto;">
+    <img src="./docs/images/1.jpeg" alt="Image description" style="max-width: 100%; height: max-height: 100%;">
   </div>
   <div style="flex: 2; padding-left: 20px;">
     <p>
@@ -48,13 +48,13 @@ The rising epidemic of diabetes and cardiovascular diseases is a significant iss
 ## Tech Stack
 
 <div style="display: flex; flex-wrap: wrap; align-items: center;">
-  <img src="./docs/images/techstack1.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
-  <img src="./docs/images/techstack2.png" alt="Tech Stack" style="width: 50px; margin: 10px;">
-  <img src="./docs/images/techstack3.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
-  <img src="./docs/images/techstack4.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
-  <img src="./docs/images/techstack5.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
-  <img src="./docs/images/techstack6.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
-  <img src="./docs/images/techstack7.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
+  <img src="./docs/images/techstack1.png" alt="Tech Stack" style="width: 100px; margin: 30px;">
+  <img src="./docs/images/techstack2.png" alt="Tech Stack" style="width: 100px; margin: 30px;">
+  <img src="./docs/images/techstack3.png" alt="Tech Stack" style="width: 100px; margin: 30px;">
+  <img src="./docs/images/techstack4.png" alt="Tech Stack" style="width: 100px; margin: 30px;">
+  <img src="./docs/images/techstack5.png" alt="Tech Stack" style="width: 100px; margin: 30px;">
+  <img src="./docs/images/techstack6.png" alt="Tech Stack" style="width: 100px; margin: 30px;">
+  <img src="./docs/images/techstack7.png" alt="Tech Stack" style="width: 100px; margin: 30px;">
 </div>
 
 
