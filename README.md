@@ -23,9 +23,9 @@ The rising epidemic of diabetes and cardiovascular diseases is a significant iss
     We have implemented a machine learning model that predicts diabetes conditions (diabetes, no diabetes, pre-diabetes) based on various lifestyle features. This allows patients to check their diabetes status from home.
 </p>
 
-## Implementation
-
 <img src="./docs/images/2.png" alt="Model implementation process">
+
+## Implementation
 
 * Selected a huge data set which is the servey responses from the people in US.
 * Pre-process the data as appropriate for the machine learning models.
@@ -36,7 +36,7 @@ The rising epidemic of diabetes and cardiovascular diseases is a significant iss
     + Check pairwise correlation of the features and eliminate the redundant features.
 
 * Implementing machine learning model and evaluating model performance
-    + Random Forest
+    <b>+ Random Forest</b>
     + Support Vector Machine (SVM)
     + Logistic Regression
     + Gradient Boosting
