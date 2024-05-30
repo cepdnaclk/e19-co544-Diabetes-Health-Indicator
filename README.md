@@ -49,20 +49,13 @@ The rising epidemic of diabetes and cardiovascular diseases is a significant iss
 
 <div style="display: flex; flex-wrap: wrap; align-items: center;">
   <img src="./docs/images/techstack1.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
-  <img src="./docs/images/techstack2.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
+  <img src="./docs/images/techstack2.png" alt="Tech Stack" style="width: 50px; margin: 10px;">
   <img src="./docs/images/techstack3.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
   <img src="./docs/images/techstack4.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
   <img src="./docs/images/techstack5.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
   <img src="./docs/images/techstack6.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
   <img src="./docs/images/techstack7.png" alt="Tech Stack" style="width: 50px; height: 50px; margin: 10px;">
 </div>
-![Tech Stack](./docs/images/techstack1.png)
-![Tech Stack](./docs/images/techstack2.png)
-![Tech Stack](./docs/images/techstack3.png)
-![Tech Stack](./docs/images/techstack4.png)
-![Tech Stack](./docs/images/techstack5.png)
-![Tech Stack](./docs/images/techstack6.png)
-![Tech Stack](./docs/images/techstack7.png)
 
 
 
