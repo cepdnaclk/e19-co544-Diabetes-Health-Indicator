@@ -15,12 +15,10 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up SSH
-      run: |
-        mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.AIKEN_SSH_KEY }}
+      uses: webfactory/ssh-agent@v0.5.5
+      with:
+        ssh-private-key: ${{ secrets.AIKEN_SSH_KEY }}
+        passphrase: ${{ secrets.SSH_PASSPHRASE }}
 
     - name: Run test script on Aiken server
       run: |
