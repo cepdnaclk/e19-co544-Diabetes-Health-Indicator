@@ -14,12 +14,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up SSH
-      uses: webfactory/ssh-agent@v0.5.5
-      with:
-        ssh-private-key: ${{ secrets.AIKEN_SSH_KEY }}
-        passphrase: ${{ secrets.SSH_PASSPHRASE }}
+    - name: Install SSH client
+      run: sudo apt-get install -y openssh-client
 
     - name: Run test script on Aiken server
       run: |
-        ssh -o StrictHostKeyChecking=no e19492@aiken.ce.pdn.ac.lk 'cd ~/CO544/project && bash test_script.sh'
+        sshpass -p "${{ secrets.AIKEN_SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no e19492@aiken.ce.pdn.ac.lk 'cd ~/CO544/project && bash test_script.sh'
