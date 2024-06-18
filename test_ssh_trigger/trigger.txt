@@ -1,0 +1,3 @@
+git add test_ssh_trigger/trigger.txt
+git commit -m "Trigger SSH test workflow"
+git push

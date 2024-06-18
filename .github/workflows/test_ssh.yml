@@ -1,0 +1,27 @@
+name: Test SSH Connection
+
+on:
+  push:
+    paths:
+      - 'test_ssh_trigger/*'
+  workflow_dispatch:
+
+jobs:
+  test_ssh:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.AIKEN_SSH_KEY }}
+
+    - name: Run test script on Aiken server
+      run: |
+        ssh -o StrictHostKeyChecking=no e19492@aiken.ce.pdn.ac.lk 'cd ~/CO544/project && bash test_script.sh'
