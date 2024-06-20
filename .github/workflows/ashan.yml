@@ -26,5 +26,5 @@ jobs:
           cd /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator
           source ~/.bashrc
           conda deactivate
-          conda activate ./env
+          conda activate /home/e19452/ml_project/env
           python test.py
