@@ -25,3 +25,7 @@ jobs:
         script: |
           cd /home/e19452/e19-co544-Diabetes-Health-Indicator
           touch gitactiontest.txt
+          source ~/.bashrc
+          conda deactivate
+          conda activate ./env
+          python test.py
