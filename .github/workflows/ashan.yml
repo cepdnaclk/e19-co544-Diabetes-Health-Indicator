@@ -23,8 +23,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-          cd /home/e19452/e19-co544-Diabetes-Health-Indicator
-          touch gitactiontest.txt
+          cd /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator
           source ~/.bashrc
           conda deactivate
           conda activate ./env
