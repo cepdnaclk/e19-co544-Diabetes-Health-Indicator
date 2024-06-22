@@ -1,0 +1,39 @@
+name: Preprocessing Notebook Automation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'preprocessing.ipynb'
+
+jobs:
+  preprocess:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Deploy using SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            source ~/.bashrc
+            cd /home/e19452/ml_project
+            conda deactivate
+            conda activate /home/e19452/ml_project/env
+            cd /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts
+            git pull origin main
+            git checkout main
+            jupyter nbconvert --to script ./notebooks/preprocessing.ipynb --output-dir ./scripts
+            python ./scripts/preprocessing.py
+            git add ./scripts/preprocessing.py
+            git commit -m "Automated preprocessing script update"
+            git push origin main
+        env:
+            GH_PAT: ${{ secrets.GH_PAT }}
