@@ -28,11 +28,8 @@ jobs:
             conda deactivate
             conda activate /home/e19452/ml_project/env
             cd /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts
-            git pull origin main
-            # jupyter nbconvert --to script /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/notebooks/preprorcessing.ipynb --output-dir /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts
+            # git pull origin main
+            jupyter nbconvert --to script /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/notebooks/preprocessing.ipynb --output-dir /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts
             python /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts/preprocessing.py
-            git add /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts/preprocessing.py
-            git commit -m "Automated preprocessing script update"
-            
-        # env:
-        #     GH_PAT: ${{ secrets.GH_PAT }}
+            # git add /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts/preprocessing.py
+            # git commit -m "Automated preprocessing script update"
