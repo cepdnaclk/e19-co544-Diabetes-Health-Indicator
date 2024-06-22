@@ -15,7 +15,7 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
 
-# Define the path to the CSV filee
+# Define the path to the CSV file
 file_path = '/home/e19452/ml_project/data/2015.csv'
 
 # Load the CSV file into a DataFrame
