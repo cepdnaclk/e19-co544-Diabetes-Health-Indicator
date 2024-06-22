@@ -29,11 +29,10 @@ jobs:
             conda activate /home/e19452/ml_project/env
             cd /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts
             git pull origin main
-            git checkout main
             jupyter nbconvert --to script ./notebooks/preprocessing.ipynb --output-dir ./scripts
             python ./scripts/preprocessing.py
             git add ./scripts/preprocessing.py
             git commit -m "Automated preprocessing script update"
-            git push origin main
-        env:
-            GH_PAT: ${{ secrets.GH_PAT }}
+            
+        # env:
+        #     GH_PAT: ${{ secrets.GH_PAT }}
