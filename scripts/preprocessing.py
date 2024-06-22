@@ -313,15 +313,15 @@ selected_features = correlation_with_target[abs(correlation_with_target) > corre
 #                                    'ALCDAY5', '_RFBMI5', 'WTKG3', 'EMPLOY1', '_RFHLTH', '_AGEG5YR',
 #                                    '_AGE80', '_AGE_G', '_BMI5CAT', '_BMI5', '_RFHYPE5', 'GENHLTH',"DIABETE3"]]
 
-import seaborn as sns
+# import seaborn as sns
 
-# Plot the correlation graph
-plt.figure(figsize=(12, 8))
-sns.barplot(x=correlation_with_target[selected_features].values, y=correlation_with_target[selected_features].index, palette="viridis")
-plt.title('Correlation of Features with Target Variable (DIABETE3)')
-plt.xlabel('Correlation Coefficient')
-plt.ylabel('Features')
-plt.show()
+# # Plot the correlation graph
+# plt.figure(figsize=(12, 8))
+# sns.barplot(x=correlation_with_target[selected_features].values, y=correlation_with_target[selected_features].index, palette="viridis")
+# plt.title('Correlation of Features with Target Variable (DIABETE3)')
+# plt.xlabel('Correlation Coefficient')
+# plt.ylabel('Features')
+# plt.show()
 
 
 # In[19]:
@@ -333,7 +333,7 @@ selected_features.append("DIABETE3")
 filtered_brfss_df_selected = data[selected_features]
 
 
-filtered_brfss_df_selected.head()
+#filtered_brfss_df_selected.head()
 
 
 # In[20]:
@@ -344,7 +344,7 @@ filtered_brfss_df_selected.head()
 # see the pairwise correlatioin of the features
 
 import pandas as pd
-import seaborn as sns
+#import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Assuming your DataFrame with 25 features is named `data`
@@ -353,10 +353,10 @@ import matplotlib.pyplot as plt
 correlation_matrix = filtered_brfss_df_selected.corr()
 
 # Plot the heatmap
-plt.figure(figsize=(12, 10))
-sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm", vmin=-1, vmax=1)
-plt.title('Pairwise Correlation Heatmap of All Features')
-plt.show()
+# plt.figure(figsize=(12, 10))
+# sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm", vmin=-1, vmax=1)
+# plt.title('Pairwise Correlation Heatmap of All Features')
+# plt.show()
 
 
 # In[21]:
@@ -370,8 +370,8 @@ for i in range(correlation_matrix.shape[0]):
         if abs(correlation_matrix.iat[i, j]) > threshold:
             redundant_pairs.add((correlation_matrix.columns[i], correlation_matrix.columns[j]))
 
-print("Redundant feature pairs (correlation > 0.95 or < -0.95):")
-print(redundant_pairs)
+# print("Redundant feature pairs (correlation > 0.95 or < -0.95):")
+# print(redundant_pairs)
 
 
 # In[22]:
@@ -422,8 +422,8 @@ filtered_brfss_df_selected.rename(columns={
 all_features = filtered_brfss_df_selected.columns.tolist()
 
 # Display the list of all features
-print(all_features)
-print(len(all_features))
+# print(all_features)
+# print(len(all_features))
 
 
 # In[25]:
