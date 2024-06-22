@@ -31,3 +31,7 @@ jobs:
             python /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts/preprocessing.py
             git add /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts/preprocessing.py
             git commit -m "Automated preprocessing script update"
+            # Configure git to use the PAT
+            git config --global user.name "${{ secrets.GH_USERNAME }}"
+            git config --global user.password "${{ secrets.GH_PAT}}"
+            git push https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_PAT }}@github.com/cepdnaclk/e19-co544-Diabetes-Health-Indicator.git main
