@@ -24,7 +24,7 @@ jobs:
           port: 22
           script: |
             source ~/.bashrc
-            cd /home/e19452/ml_project
+            cd /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator
             conda activate /home/e19452/ml_project/env
             git pull origin main
             jupyter nbconvert --to script /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/notebooks/preprocessing.ipynb --output-dir /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts
