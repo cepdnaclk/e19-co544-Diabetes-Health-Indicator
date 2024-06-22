@@ -1,0 +1,12 @@
+# write automation description here
+
+1. if preprocessing.ipynb change in main branch,
+    * login to server
+    * activate base conda env
+    * go to project repo
+    * activate env conda environment
+    * git pull
+    * git checkout main
+    * conver preprocessing.ipynb to .py file
+    * execute preprocessing.py
+    * git push
