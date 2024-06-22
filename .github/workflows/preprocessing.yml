@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'preprocessing.ipynb'
+      - 'notebooks/preprocessing.ipynb'
 
 jobs:
   preprocess:
