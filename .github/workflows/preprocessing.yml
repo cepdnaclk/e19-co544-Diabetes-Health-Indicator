@@ -149,7 +149,7 @@ jobs:
             conda activate /home/e19452/ml_project/env
             jupyter nbconvert --to script /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/notebooks/testing.ipynb --output-dir /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts
             python /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts/testing.py
-
+            cat hi this is new code
             git checkout main
             git pull
             git add .
