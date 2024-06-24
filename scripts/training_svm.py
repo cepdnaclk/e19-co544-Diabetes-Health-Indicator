@@ -10,7 +10,7 @@ import pickle
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 
-# Load the training data
+# Load the training dataa
 X_train = pd.read_csv('/home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/data/X_train.csv')
 y_train = pd.read_csv('/home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/data/y_train.csv').squeeze()  # Ensure y_train is a Series, not a DataFrame
 
