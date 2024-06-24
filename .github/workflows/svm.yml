@@ -1,0 +1,63 @@
+name: SVM Notebook Automation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'notebooks/training_svm.ipynb'
+
+jobs:          
+  train_svm:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Deploy using SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          timeout: 1h  # Set timeout to 60 minutes
+          script: |
+            source ~/.bashrc
+            cd /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator
+            conda activate /home/e19452/ml_project/env
+            git pull origin main
+            jupyter nbconvert --to script /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/notebooks/training_svm.ipynb --output-dir /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts
+            python /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts/training_svm.py
+
+  testing:
+    needs: [train_svm]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Deploy using SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          command_timeout: 200m
+          script: |
+            source ~/.bashrc
+            cd /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator
+            conda activate /home/e19452/ml_project/env
+            # jupyter nbconvert --to script /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/notebooks/testing.ipynb --output-dir /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts
+            python /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts/testing.py
+            git checkout main
+            git pull
+            git add .
+            git commit -m "Automated SVM script update"
+            # Configure git to use the PAT
+            git config --global user.name "${{ secrets.GH_USERNAME }}"
+            git config --global user.password "${{ secrets.GH_PAT}}"
+            git push https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_PAT }}@github.com/cepdnaclk/e19-co544-Diabetes-Health-Indicator.git main
