@@ -82,6 +82,9 @@ jobs:
           script: |
             ssh -V
             cd /home/e19300/CO544/CO544-Flask-Backend
+            rm -r __pycache__
+            rm -r models/*
+            mkdir models
             git checkout main
             git pull origin main
             source ~/.bashrc
