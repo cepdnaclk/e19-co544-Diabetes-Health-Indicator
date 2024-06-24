@@ -1,11 +1,11 @@
 name: Random Forest Notebook Automation
 
-# on:
-#   push:
-#     branches:
-#       - main
-#     paths:
-#       - 'notebooks/training_random_forest.ipynb'
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'notebooks/training_random_forest.ipynb'
 
 jobs:
   train_random_forest:
