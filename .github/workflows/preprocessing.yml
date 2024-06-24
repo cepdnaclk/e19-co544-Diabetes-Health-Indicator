@@ -130,6 +130,7 @@ jobs:
   testing:
     needs: [train_random_forest, train_logistic_regression, train_gradient_boosting, train_svm]
     runs-on: ubuntu-latest
+    timeout-minutes: 60  # Set the job timeout to 60 minutes
 
     steps:
       - name: Checkout repository
@@ -142,7 +143,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
-          timeout: 1h  # Set timeout to 60 minutes
           script: |
             source ~/.bashrc
             cd /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator
