@@ -119,6 +119,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
+          timeout: 3600  # Set timeout to 60 minutes
           script: |
             source ~/.bashrc
             cd /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator
@@ -141,6 +142,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
+          timeout: 3600  # Set timeout to 60 minutes
           script: |
             source ~/.bashrc
             cd /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator
