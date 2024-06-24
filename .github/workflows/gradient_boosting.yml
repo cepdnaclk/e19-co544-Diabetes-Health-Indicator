@@ -62,3 +62,32 @@ jobs:
             git config --global user.name "${{ secrets.GH_USERNAME }}"
             git config --global user.password "${{ secrets.GH_PAT}}"
             git push https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_PAT }}@github.com/cepdnaclk/e19-co544-Diabetes-Health-Indicator.git main
+
+  deploy_backend:
+      # The type of runner that the job will run on
+      needs: [testing]
+      runs-on: ubuntu-latest
+  
+      # Steps represent a sequence of tasks that will be executed as part of the job
+      steps:       
+      - name: Deploy using ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME_AH }}
+          key: ${{ secrets.SSH_PRIVATE_KEY_AH }}
+          port: 22
+          script: |
+            ssh -V
+            cd /home/e19300/CO544/CO544-Flask-Backend
+            rm -r __pycache__
+            rm -r models/*
+            mkdir models
+            git checkout main
+            git pull origin main
+            source ~/.bashrc
+            conda deactivate
+            conda activate /home/e19300//miniconda3/envs/flaskApp/
+            cp -rv /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/models/* /home/e19300/CO544/CO544-Flask-Backend/models
+            nohup gunicorn --bind 0.0.0.0:8888 wsgi:app &
+            disown
