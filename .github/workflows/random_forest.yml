@@ -1,0 +1,64 @@
+name: Preprocessing Notebook Automation
+
+# on:
+#   push:
+#     branches:
+#       - main
+#     paths:
+#       - 'notebooks/training_random_forest.ipynb'
+
+jobs:
+  train_random_forest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Deploy using SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            source ~/.bashrc
+            cd /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator
+            git pull origin main
+            conda activate /home/e19452/ml_project/env
+            jupyter nbconvert --to script /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/notebooks/training_random_forest.ipynb --output-dir /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts
+            python /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts/training_random_forest.py
+
+
+  testing:
+    needs: [train_random_forest]
+    runs-on: ubuntu-latest
+    timeout-minutes: 60  # Set the job timeout to 60 minutes
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Deploy using SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            source ~/.bashrc
+            cd /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator
+            conda activate /home/e19452/ml_project/env
+            jupyter nbconvert --to script /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/notebooks/testing.ipynb --output-dir /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts
+            python /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/scripts/testing.py
+
+            git checkout main
+            git pull
+            git add .
+            git commit -m "Automated preprocessing script update"
+            # Configure git to use the PAT
+            git config --global user.name "${{ secrets.GH_USERNAME }}"
+            git config --global user.password "${{ secrets.GH_PAT}}"
+            git push https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_PAT }}@github.com/cepdnaclk/e19-co544-Diabetes-Health-Indicator.git main
